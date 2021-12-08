@@ -10,5 +10,7 @@ namespace CIDM_3312_Final_Project.Models
         }
 
         public DbSet<Character> Character {get; set;}
+
+        public DbSet<Stats> Stats {get; set;}
     }
 }

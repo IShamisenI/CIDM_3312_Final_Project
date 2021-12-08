@@ -11,9 +11,9 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesCharacterContext _context;
+        private readonly CharacterContext _context;
 
-        public CreateModel(RazorPagesCharacterContext context)
+        public CreateModel(CharacterContext context)
         {
             _context = context;
         }

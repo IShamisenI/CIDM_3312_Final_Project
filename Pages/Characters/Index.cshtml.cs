@@ -11,9 +11,9 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPagesCharacterContext _context;
+        private readonly CharacterContext _context;
 
-        public IndexModel(RazorPagesCharacterContext context)
+        public IndexModel(CharacterContext context)
         {
             _context = context;
         }

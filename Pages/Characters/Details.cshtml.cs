@@ -11,9 +11,9 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 {
     public class DetailsModel : PageModel
     {
-        private readonly RazorPagesCharacterContext _context;
+        private readonly CharacterContext _context;
 
-        public DetailsModel(RazorPagesCharacterContext context)
+        public DetailsModel(CharacterContext context)
         {
             _context = context;
         }
@@ -27,7 +27,7 @@ namespace CIDM_3312_Final_Project.Pages.Characters
                 return NotFound();
             }
 
-            Character = await _context.Character.FirstOrDefaultAsync(m => m.CharacterId == id);
+            Character = await _context.Character.Include(m => m.Stats).FirstOrDefaultAsync(m => m.CharacterId == id);
 
             if (Character == null)
             {

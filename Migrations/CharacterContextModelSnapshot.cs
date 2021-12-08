@@ -13,7 +13,7 @@ namespace CIDM_3312_Final_Project.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0");
+                .HasAnnotation("ProductVersion", "3.1.5");
 
             modelBuilder.Entity("CIDM_3312_Final_Project.Models.Character", b =>
                 {
@@ -40,6 +40,37 @@ namespace CIDM_3312_Final_Project.Migrations
                     b.HasKey("CharacterId");
 
                     b.ToTable("Character");
+                });
+
+            modelBuilder.Entity("CIDM_3312_Final_Project.Models.Stats", b =>
+                {
+                    b.Property<int>("StatsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CharacterId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Stats_Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Stats_Number")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("StatsId");
+
+                    b.HasIndex("CharacterId");
+
+                    b.ToTable("Stats");
+                });
+
+            modelBuilder.Entity("CIDM_3312_Final_Project.Models.Stats", b =>
+                {
+                    b.HasOne("CIDM_3312_Final_Project.Models.Character", "Character")
+                        .WithMany("Stats")
+                        .HasForeignKey("CharacterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

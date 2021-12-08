@@ -11,9 +11,9 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPagesCharacterContext _context;
+        private readonly CharacterContext _context;
 
-        public DeleteModel(RazorPagesCharacterContext context)
+        public DeleteModel(CharacterContext context)
         {
             _context = context;
         }

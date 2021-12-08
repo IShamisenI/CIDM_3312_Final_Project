@@ -35,6 +35,22 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Character.Background)
         </dd>
+        @foreach(var r in Model.Character.Stats)
+        {
+            <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => r.Stats_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => r.Stats_Name)
+        </dd>
+
+            <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => r.Stats_Number)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => r.Stats_Number)
+        </dd>
+        }
     </dl>
 </div>
 <div>

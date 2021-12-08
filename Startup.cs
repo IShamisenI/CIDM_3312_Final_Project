@@ -30,8 +30,8 @@ namespace CIDM_3312_Final_Project
             services.AddDbContext<CharacterContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("CharacterContext")));
 
-            services.AddDbContext<RazorPagesCharacterContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("RazorPagesCharacterContext")));
+            // services.AddDbContext<RazorPagesCharacterContext>(options =>
+                    // options.UseSqlServer(Configuration.GetConnectionString("RazorPagesCharacterContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

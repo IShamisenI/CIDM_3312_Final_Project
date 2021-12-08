@@ -12,9 +12,9 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 {
     public class EditModel : PageModel
     {
-        private readonly RazorPagesCharacterContext _context;
+        private readonly CharacterContext _context;
 
-        public EditModel(RazorPagesCharacterContext context)
+        public EditModel(CharacterContext context)
         {
             _context = context;
         }
