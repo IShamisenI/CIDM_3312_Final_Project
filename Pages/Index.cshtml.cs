@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +16,7 @@ namespace CIDM_3312_Final_Project.Pages
         {
             _logger = logger;
         }
+        
 
         public void OnGet()
         {

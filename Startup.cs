@@ -26,9 +26,10 @@ namespace CIDM_3312_Final_Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
+            services.AddMvc().AddRazorPagesOptions(options => options.Conventions.AddPageRoute("/Characters/Index", ""));
             services.AddDbContext<CharacterContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("CharacterContext")));
+
 
             // services.AddDbContext<RazorPagesCharacterContext>(options =>
                     // options.UseSqlServer(Configuration.GetConnectionString("RazorPagesCharacterContext")));

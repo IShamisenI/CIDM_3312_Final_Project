@@ -14,7 +14,15 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Character[0].Class_ID)
+                @{
+                    var firstSort = "first_asc";
+                    if (Model.CurrentSort == "first_asc")
+                    {
+                        firstSort = "first_desc";
+                    }
+
+                }
+                <a asp-page="./Index" asp-route-CurrentSort="@firstSort"></a>@Html.DisplayNameFor(model => model.Character[0].Class_ID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Character[0].Character_Name)
@@ -52,3 +60,24 @@
 }
     </tbody>
 </table>
+
+<hr />
+@{
+    var prevDisabled="";
+    if (Model.PageNum <= 1)
+    {
+        prevDisabled = "disabled";
+    }
+
+    var nextDisabled="";
+    if (Model.PageNum >= Model.PageNum)
+    {
+        nextDisabled = "disabled";
+    }
+}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li clas="page-item @prevDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum - 1)">Previous</a></li>
+        <li clas="page-item @nextDisabled"><a class="page-link" asp-page="./Index" asp-route-PageNum="@(Model.PageNum + 1)">Next</a></li>
+    </ul>
+</nav>

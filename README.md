@@ -24,4 +24,3 @@ attunement
 strength
 dexterity
 intelligence
-faith

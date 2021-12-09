@@ -20,9 +20,27 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 
         public IList<Character> Character { get;set; }
 
+        [BindProperty(SupportsGet = true)]
+        public int PageNum {get; set;} = 1;
+        public int PageSize {get; set;} = 10;
+
+        [BindProperty(SupportsGet = true)]
+        public string CurrentSort {get; set;}
         public async Task OnGetAsync()
         {
-            Character = await _context.Character.ToListAsync();
+            var query = _context.Character.Select(c => c);
+
+            switch (CurrentSort)
+            {
+                case "first_asc":
+                    query = query.OrderBy(c => c.Character_Name);
+                    break;
+                case "first_desc":
+                    query = query.OrderByDescending(c => c.Character_Name);
+                    break;
+            }
+
+            Character = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
         }
     }
 }
