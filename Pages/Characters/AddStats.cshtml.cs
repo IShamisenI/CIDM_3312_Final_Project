@@ -27,6 +27,7 @@ namespace CIDM_3312_Final_Project.Pages.Characters
 
         public void OnGet()
         {
+            StatsDropDown = new SelectList(_context.Stats.ToList(), "CharacterId");
             StatsDropDown = new SelectList(_context.Stats.ToList(), "Stats_Name");
         }
 

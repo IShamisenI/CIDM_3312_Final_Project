@@ -13,6 +13,13 @@
     <div class="col-md-4">
         <form method="post">
             <div class="form-group">
+                <label asp-for="Stats.CharacterId" class="control-label"></label>
+                <select asp-for="Stats.CharacterId" asp-items="Model.StatsDropDown" class="form-control">
+                    <option value="">--Select Character--</option>
+                </select>
+                <span asp-validation-for="Stats.CharacterId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Stats.StatsId" class="control-label"></label>
                 <select asp-for="Stats.StatsId" asp-items="Model.StatsDropDown" class="form-control">
                     <option value="">--Select Stat--</option>
