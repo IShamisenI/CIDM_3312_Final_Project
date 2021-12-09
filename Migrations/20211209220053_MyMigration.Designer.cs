@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CIDM_3312_Final_Project.Migrations
 {
     [DbContext(typeof(CharacterContext))]
-    [Migration("20211208215655_MyMigration")]
+    [Migration("20211209220053_MyMigration")]
     partial class MyMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
